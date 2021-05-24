@@ -5,7 +5,7 @@ import {
   voteComment,
   deleteComment,
 } from "../utils/API";
-import { addError } from "./categories";
+import { addError } from "./errors";
 
 export const COMMENT_GET = "COMMENT_GET";
 export const COMMENT_UPDATE = "COMMENT_UPDATE";
