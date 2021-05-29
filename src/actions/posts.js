@@ -22,7 +22,7 @@ export function handleFetchPosts() {
   return (dispatch) =>
     getPosts()
       .then((posts) => dispatch(addStorePosts(posts)))
-      .catch((e) => addError(e));
+      .catch(() => dispatch(addError()));
 }
 
 export function handleFetchCatPosts(path) {

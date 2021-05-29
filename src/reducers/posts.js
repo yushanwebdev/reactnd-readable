@@ -1,15 +1,15 @@
 import { POSTS_GET, POST_UPDATE, POST_VOTE } from "../actions/posts";
 
-export default function posts(state = {}, action) {
-  const { id, option } = action.payload;
+export default function posts(state = [], action) {
   switch (action.type) {
     case POSTS_GET:
-      return action.posts;
+      return action.payload;
     case POST_UPDATE:
       return state.map((item) =>
-        item.id === action.post.id ? action.post : item
+        item.id === action.payload.id ? action.payload : item
       );
     case POST_VOTE:
+      const { id, option } = action.payload;
       return {
         ...state,
         [id]: {
